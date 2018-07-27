@@ -19,8 +19,10 @@ Reward for run 10 already distributed to 0x6641c30B8Ec57A6168707115b80B0af1a5cf1
 ```
 
 ### Declare below Environment Variables before running.For example
+```
 export GETH_NODE_URL=https://ropsten.infura.io/v3/YOURAPIKEY
 export token_owner_private_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
 
 Note : Please refer to criteria & dbtable in the script should you wish to reward using any other desired criteria.
 
