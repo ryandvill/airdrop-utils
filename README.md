@@ -1,7 +1,10 @@
-#### Usage
+### Introduction
+rewarder.py is a python utility for distribution tokens to ethereum addresses based on a specified rewards criteria based on a provided sql. It ensures the same airdrop is not repeated for the same address twice and logs txid's.
+
+### Usage
 ./rewarder.py tokensymbol amount run#
 
-#### Example
+### Example
 '''
 $ ./rewarder.py EST 1000 10
 Token tse_rewards for run 10 not found for 0xa03783510256f318ad666354c39db15d8b2f516a adding to tse_rewards table
@@ -14,8 +17,13 @@ Token tse_rewards for run 10 already distributed to 0xa03783510256f318ad666354c3
 Token tse_rewards for run 10 already distributed to 0x6641c30B8Ec57A6168707115b80B0af1a5cf160C
 '''
 
-#### Declare below Environment Variables before running.For example
+### Declare below Environment Variables before running.For example
 export GETH_NODE_URL=https://ropsten.infura.io/v3/YOURAPIKEY
 export token_owner_private_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Note : Please refer to criteria & dbtable in the script should you wish to reward using any other desired criteria.
+
+
+### TODO
+- Introduce confirmation status
+- Introduce rewards based on holding other tokens by checking reciever addresses token balances.
