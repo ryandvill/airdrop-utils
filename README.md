@@ -18,7 +18,7 @@ Reward for run 10 already distributed to 0xa03783510256f318ad666354c39db15d8b2f5
 Reward for run 10 already distributed to 0x6641c30B8Ec57A6168707115b80B0af1a5cf160C
 ```
 
-### Declare below Environment Variables before running.For example
+### Declare below Environment Variables before running.
 ```
 export GETH_NODE_URL=https://ropsten.infura.io/v3/YOURAPIKEY
 export token_owner_private_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
