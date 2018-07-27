@@ -17,6 +17,7 @@ conn.autocommit = True
 cur = conn.cursor()
 
 # If table doesnt exist create
+
 createtablesql = """ CREATE TABLE IF NOT EXISTS public.tse_rewards
 (
     eth_address character varying(42) COLLATE pg_catalog."default" NOT NULL,
