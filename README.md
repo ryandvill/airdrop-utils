@@ -1,5 +1,5 @@
 ### Introduction
-rewarder.py is a python utility for distributing tokens to ethereum addresses based on a specified rewards criteria based on a provided sql. It ensures the same airdrop is not repeated for the same address twice and logs txid's.
+rewarder.py is a python utility for distributing tokens to ethereum addresses based on a specified rewards criteria sql. It ensures the same airdrop is not repeated for the same address twice and logs txid's.
 
 ### Usage
 ./rewarder.py tokensymbol amount run
