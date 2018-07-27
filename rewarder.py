@@ -46,7 +46,7 @@ criteria="SELECT DISTINCT eth_address FROM user_accounts_profile WHERE verified=
 cur.execute (criteria)
 rows = cur.fetchall()
 
-# For every verified user, check if they have not recieved rewards for this run already and if not then onboard accordingly.
+# For every ethereum address selected, check if they have not recieved rewards for this run already and if not then onboard accordingly.
 for row in rows:
     cur.execute ("SELECT eth_address,run,txid FROM tse_rewards WHERE eth_address = %s AND token = %s AND run = %s AND txid IS NOT NULL" , (row[0], token, run, ));
     if (cur.rowcount == 0) :
@@ -55,7 +55,7 @@ for row in rows:
     else :
         print ("Reward for run", run, "already distributed to", row[0])
 
-# Connect to Ropsten Infura
+# Connect to GETH node
 GETH_NODE_URL=os.environ.get('GETH_NODE_URL', '')
 web3 = Web3(HTTPProvider(GETH_NODE_URL))
 
@@ -76,7 +76,7 @@ token_owner_private_key = os.environ.get('token_owner_private_key', '')
 token_owner = web3.eth.account.privateKeyToAccount(token_owner_private_key).address
 nonce = web3.eth.getTransactionCount(token_owner)
 
-# Do the tse_rewards on valid accounts
+# Distribute rewards to eligible ethereum addresses
 cur.execute ("SELECT DISTINCT eth_address, amount FROM tse_rewards WHERE run = %s AND token = %s AND txid IS NULL", (run, token));
 rows = cur.fetchall()
 for row in rows:    
