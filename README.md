@@ -2,7 +2,7 @@
 rewarder.py is a python utility for distribution tokens to ethereum addresses based on a specified rewards criteria based on a provided sql. It ensures the same airdrop is not repeated for the same address twice and logs txid's.
 
 ### Usage
-./rewarder.py tokensymbol amount run#
+./rewarder.py tokensymbol amount run
 
 ### Example
 ```
@@ -26,5 +26,4 @@ Note : Please refer to criteria & dbtable in the script should you wish to rewar
 
 
 ### TODO
-- Introduce confirmation status
 - Introduce rewards based on holding other tokens by checking reciever addresses token balances.
