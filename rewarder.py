@@ -94,7 +94,7 @@ for row in rows:
     txn = web3.eth.account.signTransaction(txn, token_owner_private_key)
     txid = web3.eth.sendRawTransaction(txn.rawTransaction)
         
-    print ("Rewarding", token, "to", row[0] , "txid is " , txid.decode("utf8"))
+    print ("Rewarding", token, "to", row[0] , "txid is " , txid)
     cur.execute("UPDATE tse_rewards SET txid = (%s) WHERE eth_address = (%s) AND token = (%s) AND run = %s", (txid, row[0], token, run));
     nonce = nonce + 1 
 
