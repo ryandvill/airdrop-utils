@@ -54,7 +54,7 @@ web3 = Web3(HTTPProvider(GETH_NODE_URL))
 
 # Create TokenInstances with Token Address & ABI
 
-with open('advtoken.json', 'r') as abi_definition:
+with open('token.json', 'r') as abi_definition:
     abi = json.load(abi_definition)
     
 basetokeninst = web3.eth.contract(
