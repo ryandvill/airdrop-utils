@@ -1,9 +1,11 @@
 ### Introduction
-This repo consists of utilities for doing airdrops.
+This repo consists of utilities for doing conditional airdrops for purposes such as distribution of bonuses, bounties, rewards and dividends on the ethereum blockchain. 
 
-rewarder.py is a python utility for distributing tokens to ethereum addresses based on a specified rewards criteria sql. It ensures the reward is not repeated for the same address twice and logs txid's.
+rewarder.py is a python utility for distributing tokens to ethereum addresses based on a specified rewards criteria sql 
 
-dividends.py is a python utility for distributing tokens to ethereum addresses based on their holding a specific token. It ensures 
+dividends.py is a python utility for distributing tokens to ethereum addresses based on their holding a specific token. 
+
+both utilities ensure reward distributions is not repeated for the same address twice for the same run and logs txid's and distribution info to a postgres db.
 
 ### Declare below Environment Variables before running.
 ```
@@ -11,12 +13,13 @@ export GETH_NODE_URL=https://ropsten.infura.io/v3/YOURAPIKEY
 export token_owner_private_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ```
-
 ### Example run for rewarder.py
 
 ```
 $ ./rewarder.py
 Usage : ./rewarder.py Token Amount Run
+
+Below example distributed 1000 EST tokens 
 
 $ ./rewarder.py EST 1000 10
 Reward for run 10 not found for 0xa03783510256f318ad666354c39db15d8b2f516a adding to tse_rewards table
@@ -30,7 +33,9 @@ Reward for run 10 already distributed to 0xa03783510256f318ad666354c39db15d8b2f5
 Reward for run 10 already distributed to 0x6641c30B8Ec57A6168707115b80B0af1a5cf160C
 ```
 
-### Example run for dividends.py
+### Example run for dividends.py 
+
+Below example gives ES5 token holders an extra 50% based on their ES5 token holding. This can also be used to give a different droptoken based on the basetoken holding as long as the token distributing address has sufficient balance for the drop token. The amounts shown below are in wei (10^18)
 
 ```
 $ ./dividends.py 
@@ -49,6 +54,6 @@ Reward for run 2 already distributed to 0x6641c30B8Ec57A6168707115b80B0af1a5cf16
 
 ```
 
-Note : Please refer to criteria & dbtable in the script should you wish to reward using any other desired criteria.
+
 
 ###
